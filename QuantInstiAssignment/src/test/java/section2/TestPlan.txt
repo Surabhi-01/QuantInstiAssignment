@@ -1,0 +1,46 @@
+Test Plan
+
+Introduction: It is a service that manages resources for users.
+
+Scope: 
+	In Scope: Testing three endpoints: 
+	1. /start
+	2. /run
+	3. /stop
+	
+	Out of scope:
+	1. Performance Testing
+	2. Unit Testing
+	
+Test Schedule:
+	1. Week 1: Test Design
+	2. Week 2: Test Execution
+	
+Test Scenarios:
+
+Pre-condition: Any given resource at a given point in time can be only one of these states: S0 (initial state), S1, S2, S3, S4 or S5 (final state)
+
+User story 1: /start Endpoint
+
+Scenario 1: To verify that /start endpoint accepts only userID as parameter.
+Scenario 2: To verify that resource is created for user at /start enpoint with state S0.
+Scenario 3: To verify if the resource is successful for user at S0, the state change is triggered to S1.
+Scenario 4: To verify if the resource is unsuccessful for user at S0, the state change is triggered to S5.
+
+User story 2: /run Endpoint
+
+Scenario 1: To verify that /start endpoint accepts Resource and userID as parameter.
+Scenario 2: To verify that resource belongs to the user and is in state S1.
+Scenario 3: To verify if the resource is successful for user at S1, the state change is triggered to S2.
+Scenario 4:	To verify if the resource is successful for user at S2, the state change is triggered to S3.
+Scenario 5: To verify if the resource is unsuccessful for user at S1, the state change is triggered to S5.	
+
+
+User story 2: /stop Endpoint
+
+Scenario 1: To verify that /start endpoint accepts Resource and userID as parameter.
+Scenario 2: To verify that resource belongs to the user and is in state S3.
+Scenario 3: To verify if the resource is successful for user at S3, the state change is triggered to S4.
+Scenario 4:	To verify if the resource is successful for user at S4, the state change is triggered to S5.
+Scenario 5: To verify if the resource is unsuccessful for user at S3, the state change is triggered to S5.	
+
